@@ -18,7 +18,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "OIDAuthorizationRequest.h"
+#ifndef GTMAPPAUTH_USER_IMPORTS
+#import <AppAuth/AppAuth.h>
+#else // GTMAPPAUTH_USER_IMPORTS
+#import "AppAuth.h"
+#endif // GTMAPPAUTH_USER_IMPORTS
 
 @class GTMTVServiceConfiguration;
 
@@ -34,7 +38,6 @@ NS_ASSUME_NONNULL_BEGIN
     @param clientID The client identifier.
     @param clientSecret The client secret.
     @param scopes An array of scopes to combine into a single scope string per the OAuth2 spec.
-    @param TVAuthorizationURL The TV & limited input device authorization endpoint URL.
     @param additionalParameters The client's additional authorization parameters.
  */
 - (instancetype)

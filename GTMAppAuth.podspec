@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "GTMAppAuth"
-  s.version      = "0.5.1"
+  s.version      = "0.7.0"
   s.summary      = "Authorize GTM Session Fetcher requests with AppAuth via GTMAppAuth"
 
   s.description  = <<-DESC
@@ -17,11 +17,12 @@ requests with AppAuth.
   #       obtaining authorization from the user. You can use the classes of
   #       GTMAppAuth with tokens obtained out of band to authorize requests
   #       on tvOS.
-  s.platforms    = { :ios => "7.0", :osx => "10.8", :tvos => "9.0" }
+  s.platforms    = { :ios => "7.0", :osx => "10.9", :tvos => "9.0" }
 
   s.homepage     = "https://github.com/google/GTMAppAuth"
   s.license      = "Apache License, Version 2.0"
   s.authors      = { "William Denniss" => "wdenniss@google.com",
+                     "Zsika Phillip" => "zsika@google.com",
                    }
 
   s.source       = { :git => "https://github.com/google/GTMAppAuth.git", :tag => s.version }
@@ -36,12 +37,12 @@ requests with AppAuth.
 
   s.osx.source_files = "Source/GTMOAuth2KeychainCompatibility/*.{h,m}",
                        "Source/macOS/**/*.{h,m}"
-  s.osx.deployment_target = '10.8'
+  s.osx.deployment_target = '10.9'
 
   s.tvos.source_files = "Source/iOS/GTMKeychain_iOS.m"
   s.tvos.deployment_target = '9.0'
 
   s.frameworks = 'Security', 'SystemConfiguration'
   s.dependency 'GTMSessionFetcher', '~> 1.1'
-  s.dependency 'AppAuth', '~> 0.7.0'
+  s.dependency 'AppAuth', '~> 0.92.0'
 end

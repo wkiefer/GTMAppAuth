@@ -18,7 +18,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "OIDAuthorizationResponse.h"
+#ifndef GTMAPPAUTH_USER_IMPORTS
+#import <AppAuth/AppAuth.h>
+#else // GTMAPPAUTH_USER_IMPORTS
+#import "AppAuth.h"
+#endif // GTMAPPAUTH_USER_IMPORTS
 
 @class GTMTVAuthorizationRequest;
 @class OIDTokenRequest;
@@ -69,7 +73,7 @@ extern NSString *const GTMTVDeviceTokenGrantType;
         properties are populated. Non-normative parameters are placed in the
         @c #additionalParameters dictionary.
  */
-- (nullable instancetype)initWithRequest:(GTMTVAuthorizationRequest *)request
+- (instancetype)initWithRequest:(GTMTVAuthorizationRequest *)request
     parameters:(NSDictionary<NSString *, NSObject<NSCopying> *> *)parameters
     NS_DESIGNATED_INITIALIZER;
 
